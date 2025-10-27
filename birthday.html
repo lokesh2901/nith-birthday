@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love 💛</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap");
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top, #fff8dc, #ffd700);
+      overflow: hidden;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    /* ENTRY PAGE */
+    #entry-page {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #fff5b0, #ffd700);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 1s ease;
+      z-index: 2;
+    }
+
+    #entry-page h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: 3rem;
+      color: #b8860b;
+      text-shadow: 0 0 10px #fff8dc;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    #entry-btn {
+      background: #ffcc00;
+      border: none;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      color: #333;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+      cursor: pointer;
+      transition: all 0.4s ease;
+      margin-top: 20px;
+    }
+    #entry-btn:hover {
+      background: #fff8dc;
+      transform: scale(1.1);
+    }
+
+    /* MAIN PAGE */
+    #main-page {
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      text-align: center;
+      display: none;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: "Great Vibes", cursive;
+      color: #b8860b;
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #5c4200;
+      margin-bottom: 15px;
+    }
+
+    .image-container {
+      position: relative;
+      width: 80%;
+      max-width: 360px;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+      margin: 25px auto;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      border-radius: 20px;
+    }
+
+    .image-container img.active {
+      opacity: 1;
+    }
+
+    .message {
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      width: 8px;
+      height: 8px;
+      background: gold;
+      opacity: 0.8;
+      animation: fall 5s linear infinite;
+      z-index: 10;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(720deg); }
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: fixed;
+      bottom: 0;
+      color: #ff69b4;
+      font-size: 18px;
+      animation: floatUp 6s ease-in infinite;
+      opacity: 0.8;
+      z-index: 5;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(0.8); opacity: 0; }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      #entry-page h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ENTRY PAGE -->
+  <div id="entry-page">
+    <h1>🎁 A Special Surprise Awaits 🎁</h1>
+    <button id="entry-btn">Tap here to see the surprise 💛</button>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div id="main-page">
+    <h1>Happy Birthday Nithay 💛</h1>
+    <p>You make my world brighter every single day ✨</p>
+
+    <div class="image-container" id="imageContainer">
+      <img src="images/1.jpg" class="active" alt="Image 1" />
+      <img src="images/2.jpg" alt="Image 2" />
+      <img src="images/3.jpg" alt="Image 3" />
+      <img src="images/4.jpg" alt="Image 4" />
+      <img src="images/5.jpg" alt="Image 5" />
+      <img src="images/6.jpg" alt="Image 6" />
+      <img src="images/7.jpg" alt="Image 7" />
+      <img src="images/8.jpg" alt="Image 8" />
+      <img src="images/9.jpg" alt="Image 9" />
+    </div>
+
+    <div class="message" id="message">
+      You deserve all the love, laughter, and happiness today and always 💛
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+      <source src="images/1.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <script>
+    const entryPage = document.getElementById("entry-page");
+    const mainPage = document.getElementById("main-page");
+    const entryBtn = document.getElementById("entry-btn");
+    const bgMusic = document.getElementById("bg-music");
+
+    entryBtn.addEventListener("click", () => {
+      entryPage.style.opacity = "0";
+      setTimeout(() => {
+        entryPage.style.display = "none";
+        mainPage.style.display = "block";
+        setTimeout(() => (mainPage.style.opacity = "1"), 100);
+        bgMusic.play().catch(() => console.log("Autoplay blocked"));
+        startSlideshow();
+        startConfetti();
+        startHearts();
+      }, 1000);
+    });
+
+    // Slideshow
+    const images = document.querySelectorAll(".image-container img");
+    const messages = [
+      "Happy Birthday, my love! 💛",
+      "🌼 Happy Birthday my Muttakani! You steal my peace, you steal my sleep,But still, you’re the dream I want to keep 💛",
+      "🌻 Hey Kutty, my sunshine bright,You make my heart glow day and night ✨",
+      "🌸 Happy Birthday, my tiny queen,You’re my drama, my love, my favorite scene 🎬💛",
+      "🌙 Happy Birthday, my naughty star,No matter the distance, my love’s not far 💌",
+      "💕 Kutty love, my reason to smile,Stay mine forever, just for a while… and then a lifetime",
+      "🌼 Happy Birthday my Muttakani! You steal my peace, you steal my sleep,But still, you’re the dream I want to keep 💛",
+      "🌻 Hey Kutty, my sunshine bright,You make my heart glow day and night ✨",
+      "🌸 Happy Birthday, my tiny queen,You’re my drama, my love, my favorite scene 🎬💛"
+    ];
+    const messageEl = document.getElementById("message");
+    let current = 0;
+
+    function startSlideshow() {
+      setInterval(() => {
+        images[current].classList.remove("active");
+        current = (current + 1) % images.length;
+        images[current].classList.add("active");
+        messageEl.textContent = messages[current % messages.length];
+      }, 3500);
+    }
+
+    // Confetti
+    function startConfetti() {
+      const colors = ["#FFD700", "#FFF8DC", "#FFEC8B"];
+      setInterval(() => {
+        const conf = document.createElement("div");
+        conf.classList.add("confetti");
+        conf.style.left = Math.random() * 100 + "vw";
+        conf.style.background = colors[Math.floor(Math.random() * colors.length)];
+        conf.style.animationDuration = 3 + Math.random() * 3 + "s";
+        document.body.appendChild(conf);
+        setTimeout(() => conf.remove(), 6000);
+      }, 200);
+    }
+
+    // Floating hearts
+    function startHearts() {
+      const hearts = ["💛", "💛", "💛", "💛"];
+      setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = 16 + Math.random() * 20 + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }, 400);
+    }
+  </script>
+</body>
+</html>
